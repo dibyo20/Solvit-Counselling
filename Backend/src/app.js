@@ -23,6 +23,7 @@ const authRouter = require("./routes/auth.routes.js");
 const counsellorRouter = require("./routes/counsellor.routes.js");
 
 // middlewares
+app.set("trust proxy", 1);
 app.use(express.json());
 app.use(cookieParser());
 
