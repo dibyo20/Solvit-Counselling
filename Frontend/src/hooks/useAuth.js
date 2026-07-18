@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppContext } from "../context";
-import { register as registerApi, login as loginApi, logout as logoutApi } from "../services/auth.service";
+import { AppContext } from "../context";
+import { register, login, logout } from "../services/auth.service";
 
 export const useAuth = () => {
-  const { user, setUser, authLoading, setAuthLoading } = useAppContext();
+  const context = useContext(AppContext);
+  const { user, setUser, authLoading, setAuthLoading } = context;
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -12,9 +13,9 @@ export const useAuth = () => {
     setAuthLoading(true);
     setError("");
     try {
-      const response = await registerApi(fullname, username, email, password);
+      const response = await register(fullname, username, email, password);
+      console.log(response);
       setUser(response.user);
-      navigate("/");
       return response.user;
     } catch (err) {
       console.error(err);
@@ -29,9 +30,8 @@ export const useAuth = () => {
     setAuthLoading(true);
     setError("");
     try {
-      const response = await loginApi(loginCredential, password);
+      const response = await login(loginCredential, password);
       setUser(response.user);
-      navigate("/");
       return response.user;
     } catch (err) {
       console.error(err);
@@ -46,7 +46,7 @@ export const useAuth = () => {
     setAuthLoading(true);
     setError("");
     try {
-      await logoutApi();
+      await logout();
       setUser(null);
       navigate("/login");
     } catch (err) {
