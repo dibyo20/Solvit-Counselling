@@ -1,301 +1,205 @@
-﻿# 🧠 Solvit Counselling
+﻿# Solvit Counselling
 
-A full-stack web application that connects users with professional counsellors. Users can register, log in, browse available counsellors, and search by name or specialization.
+Solvit Counselling is a full-stack web application for discovering counsellors, authenticating users, and browsing professionals by specialization.
 
----
+Live Demo: https://solvit.dibyo.tech
 
-## 📁 Project Structure
+## Overview
 
-```
-Solvit Counselling/
-├── Backend/        # Express.js REST API
-└── Frontend/       # React + Vite frontend
-```
+This repository contains:
 
----
+- A Node.js + Express backend API with MongoDB persistence and cookie-based JWT authentication.
+- A React + Vite frontend for user registration, login, counsellor discovery, filtering, and booking request UI.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
-| Technology | Purpose |
-|---|---|
-| Node.js + Express 5 | REST API server |
-| MongoDB + Mongoose | Database |
-| JSON Web Tokens (JWT) | Authentication |
-| bcrypt | Password hashing |
-| cookie-parser | HTTP cookie support |
-| CORS | Cross-origin request handling |
-| dotenv | Environment variable management |
+
+- Node.js
+- Express 5
+- MongoDB + Mongoose
+- JSON Web Token (JWT)
+- bcrypt
+- cookie-parser
+- cors
+- dotenv
 
 ### Frontend
-| Technology | Purpose |
-|---|---|
-| React 19 | UI framework |
-| Vite | Build tool & dev server |
-| React Router DOM v7 | Client-side routing |
-| Axios | HTTP requests |
-| Sass | Styling |
-| Lucide React | Icon library |
 
----
+- React 19
+- Vite
+- React Router DOM 7
+- Axios
+- Sass
+- Lucide React
 
-## 🚀 Getting Started
+## Repository Structure
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) v18+
-- [MongoDB](https://www.mongodb.com/) (local or Atlas)
+```text
+Solvit-Counselling/
+  Backend/
+    server.js
+    src/
+      app.js
+      config/
+      controllers/
+      middlewares/
+      models/
+      routes/
+      utils/
+  Frontend/
+    src/
+      components/
+      hooks/
+      pages/
+      services/
+```
 
----
+## Prerequisites
 
-### 🔧 Backend Setup
+- Node.js 18 or newer
+- npm 9 or newer
+- MongoDB (local instance or MongoDB Atlas)
+
+## Local Development Setup
+
+### 1) Clone and install dependencies
 
 ```bash
+git clone https://github.com/dibyo20/Solvit-Counselling.git
+cd Solvit-Counselling
+
 cd Backend
+npm install
+
+cd ../Frontend
 npm install
 ```
 
-Create a `.env` file in the `Backend/` directory:
+### 2) Configure backend environment
+
+Create a file named `.env` in `Backend/`:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/solvit
-JWT_SECRET=your_super_secret_key_here
+MONGO_URI=mongodb://127.0.0.1:27017/solvit
+JWT_SECRET=replace_with_a_strong_secret
 NODE_ENV=development
 ```
 
-> ⚠️ **Important:** Set `NODE_ENV=production` only when deploying. This controls whether cookies use `secure: true` and `sameSite: none` (required for cross-origin production environments).
+Environment variable reference:
 
-Start the development server:
+| Variable | Required | Description |
+| --- | --- | --- |
+| `PORT` | No | API server port. Defaults to `5000`. |
+| `MONGO_URI` | Yes | MongoDB connection string. |
+| `JWT_SECRET` | Yes | Secret used to sign and verify JWT tokens. |
+| `NODE_ENV` | No | Use `production` in production deployments for secure cookie behavior. |
 
-```bash
-npm run dev
+### 3) Configure frontend environment (optional)
+
+Create `.env` in `Frontend/` only if you need to override the API URL:
+
+```env
+VITE_API_URL=http://localhost:5000/api
 ```
 
-The API will run on `http://localhost:5000`.
+If not set, the frontend defaults to `http://localhost:5000/api`.
 
----
+### 4) Run both services
 
-### 🎨 Frontend Setup
-
-```bash
-cd Frontend
-npm install
-npm run dev
-```
-
-The frontend will run on `http://localhost:5173`.
-
----
-
-## 📡 API Reference
-
-### Base URL
-```
-http://localhost:5000/api
-```
-
----
-
-### 🔐 Auth Routes (`/api/auth`)
-
-#### `POST /api/auth/register`
-Register a new user.
-
-**Request Body:**
-```json
-{
-  "fullname": "John Doe",
-  "username": "johndoe",
-  "email": "john@example.com",
-  "password": "securePass123"
-}
-```
-
-**Validation Rules:**
-- All fields are required
-- Email must be a valid format
-- Password must be at least 6 characters
-- Username must be at least 3 characters
-
-**Response `201`:**
-```json
-{
-  "message": "User registered successfully",
-  "user": { "fullname": "...", "username": "...", "email": "..." }
-}
-```
-
----
-
-#### `POST /api/auth/login`
-Log in with either username or email.
-
-**Request Body (username login):**
-```json
-{
-  "username": "johndoe",
-  "password": "securePass123"
-}
-```
-
-**Request Body (email login):**
-```json
-{
-  "email": "john@example.com",
-  "password": "securePass123"
-}
-```
-
-**Response `200`:**
-```json
-{
-  "message": "Login successful",
-  "user": { "fullname": "...", "username": "...", "email": "..." }
-}
-```
-
-> A `token` cookie is set automatically on both register and login.
-
----
-
-#### `GET /api/auth/logout`
-Log out the current user. **Protected** — requires a valid session cookie.
-
-**Response `200`:**
-```json
-{
-  "success": true,
-  "message": "Logged out successfully"
-}
-```
-
----
-
-### 👨‍⚕️ Counsellor Routes (`/api/counsellors`)
-
-#### `GET /api/counsellors/`
-Get all counsellors. **Protected** — requires a valid session cookie.
-
-**Query Parameters (optional):**
-| Param | Type | Description |
-|---|---|---|
-| `search` | `string` | Filter by name or specialization (case-insensitive) |
-
-**Example:**
-```
-GET /api/counsellors/?search=anxiety
-```
-
-**Response `200`:**
-```json
-{
-  "message": "Counsellors fetched successfully",
-  "data": [ { ... }, { ... } ]
-}
-```
-
----
-
-#### `POST /api/counsellors/add`
-Add a new counsellor (for seeding/demo purposes). **Not protected.**
-
-**Request Body:**
-```json
-{
-  "name": "Dr. Jane Smith",
-  "specialization": "Anxiety & Depression",
-  "experience": 8,
-  "sessionFee": 1500,
-  "availability": "Mon-Fri 9AM-5PM",
-  "rating": 4.8,
-  "image": "https://example.com/image.jpg"
-}
-```
-
-**Validation Rules:**
-- `name`, `specialization`, `experience`, `sessionFee`, `availability` are required
-- `experience` and `sessionFee` must be non-negative numbers
-- `rating` (optional) must be between 0 and 5
-
----
-
-## 🔒 Authentication Flow
-
-```
-1. User registers  -->  JWT token issued  -->  stored in httpOnly cookie
-2. User logs in    -->  JWT token issued  -->  stored in httpOnly cookie
-3. Protected route -->  auth middleware reads cookie  -->  verifies JWT  -->  grants access
-4. User logs out   -->  cookie is cleared
-```
-
-The JWT token expires in **24 hours**.
-
----
-
-## 🌐 CORS Configuration
-
-The backend allows requests from the following origins:
-- `http://localhost:5173`
-- `http://127.0.0.1:5173`
-- `http://localhost:5174`
-- `http://127.0.0.1:5174`
-
-All requests to the backend from the frontend must include `credentials: true` (Axios: `withCredentials: true`) for cookies to be sent.
-
----
-
-## 🌱 Database Seeding
-
-A seed script is available to populate the database with sample counsellor data:
+Backend terminal:
 
 ```bash
 cd Backend
-node seed.js
+npm run dev
 ```
 
----
+Frontend terminal:
 
-## ⚠️ Error Handling
-
-The API returns consistent JSON error responses across all endpoints:
-
-| Status Code | Meaning |
-|---|---|
-| `400` | Bad Request — validation failed or resource not found |
-| `401` | Unauthorized — token missing or invalid |
-| `404` | Not Found — route does not exist |
-| `500` | Internal Server Error — unexpected server error |
-
-**Error response format:**
-```json
-{
-  "message": "Descriptive error message here"
-}
+```bash
+cd Frontend
+npm run dev
 ```
 
----
+Default local URLs:
 
-## 📦 Environment Variables
+- Frontend: http://localhost:5173 (Vite may switch to 5174 if 5173 is occupied)
+- Backend API root: http://localhost:5000
 
-| Variable | Required | Description |
-|---|---|---|
-| `PORT` | No | Server port (default: `5000`) |
-| `MONGO_URI` | Yes | MongoDB connection string |
-| `JWT_SECRET` | Yes | Secret key for signing JWT tokens |
-| `NODE_ENV` | No | Set to `production` in production environments |
+## Available Scripts
 
----
+### Backend (`Backend/package.json`)
 
-## 🤝 Contributing
+- `npm run dev` - start backend with nodemon
+- `npm start` - start backend with Node.js
 
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m "Add some feature"`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
+### Frontend (`Frontend/package.json`)
 
----
+- `npm run dev` - start Vite dev server
+- `npm run build` - create production build
+- `npm run preview` - preview production build locally
+- `npm run lint` - run ESLint
 
-## 📄 License
+## API Summary
 
-This project is licensed under the ISC License.
+Base URL (local): `http://localhost:5000/api`
+
+### Auth routes
+
+| Method | Endpoint | Description | Auth Required |
+| --- | --- | --- | --- |
+| POST | `/auth/register` | Register a new user | No |
+| POST | `/auth/login` | Login with username or email + password | No |
+| GET | `/auth/logout` | Logout current user | Yes |
+
+### Counsellor routes
+
+| Method | Endpoint | Description | Auth Required |
+| --- | --- | --- | --- |
+| GET | `/counsellors` | Fetch all counsellors, optional `?search=` query | Yes |
+| POST | `/counsellors/add` | Add counsellor data (utility/demo endpoint) | No |
+
+## Authentication and Security
+
+- JWT token is issued on register/login and stored in an HTTP-only cookie named `token`.
+- Token expiration is `1d`.
+- Protected routes validate the cookie token using middleware.
+- In production (`NODE_ENV=production`), cookies are set with `secure: true` and `sameSite: none`.
+
+## CORS and Credentials
+
+Backend currently allows these local origins:
+
+- http://localhost:5173
+- http://127.0.0.1:5173
+- http://localhost:5174
+- http://127.0.0.1:5174
+
+Frontend requests use `withCredentials: true`, which is required for cookie-based auth.
+
+## Product Scope Notes
+
+- Counsellor discovery is fully integrated with backend APIs.
+- Booking is currently a frontend form workflow and does not persist booking records to the backend.
+
+## Deployment Notes
+
+For production deployments:
+
+- Set `NODE_ENV=production` in backend environment variables.
+- Use a strong `JWT_SECRET`.
+- Provide a production `MONGO_URI`.
+- Set `VITE_API_URL` in frontend to your deployed API base URL.
+- Ensure backend CORS `allowedOrigins` includes your production frontend origin.
+
+## Troubleshooting
+
+- `Port 5173 is in use`: Vite will automatically try another port (commonly 5174).
+- `Token not provided, unauthorized access`: make sure you are logged in and requests include cookies.
+- CORS rejection errors: verify the frontend origin is listed in backend CORS `allowedOrigins`.
+- MongoDB connection failure: validate `MONGO_URI` and ensure MongoDB is running/reachable.
+
+## License
+
+This project is currently unlicensed. Add a LICENSE file if you plan to distribute it under a specific license.
