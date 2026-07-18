@@ -25,6 +25,8 @@ async function getAllCounsellors(req, res) {
     });
 }
 
+
+
 module.exports = {
     addCounsellor,
     getAllCounsellors

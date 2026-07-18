@@ -6,24 +6,20 @@ const counsellorSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-
     image: {
         type: String,
         default: "https://cdn-icons-png.flaticon.com/512/149/149071.png"
     },
-
     specialization: {
         type: String,
         required: true,
         trim: true,
     },
-
     experience: {
         type: Number,
         required: true,
         min: 0,
     },
-
     rating: {
         type: Number,
         required: true,
@@ -31,13 +27,11 @@ const counsellorSchema = new mongoose.Schema({
         max: 5,
         default: 0,
     },
-
     sessionFee: {
         type: Number,
         required: true,
         min: 0,
     },
-
     availability: {
         type: String,
         required: true,
