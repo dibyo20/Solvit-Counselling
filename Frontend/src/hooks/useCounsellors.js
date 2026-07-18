@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { AppContext } from "../context";
 import { getCounsellors } from "../services/counsellor.service";
 
@@ -36,12 +36,45 @@ export const useCounsellors = () => {
     fetchCounsellors(searchQuery);
   }, [searchQuery]);
 
+  // Derive unique specializations from the fetched list
+  const specializations = useMemo(() => {
+    const unique = [...new Set(counsellors.map((c) => c.specialization))].sort();
+    return ["All", ...unique];
+  }, [counsellors]);
+
+  // Apply specialization filter + sort client-side
+  const displayedCounsellors = useMemo(() => {
+    let list = [...counsellors];
+
+    // Filter by specialization
+    if (selectedSpecialization && selectedSpecialization !== "All") {
+      list = list.filter(
+        (c) =>
+          c.specialization.toLowerCase() === selectedSpecialization.toLowerCase()
+      );
+    }
+
+    switch (sortBy) {
+      case "Highest Rating":
+        list.sort((a, b) => b.rating - a.rating);
+        break;
+      case "Experience":
+        list.sort((a, b) => b.experience - a.experience);
+        break;
+      default:
+        break;
+    }
+
+    return list;
+  }, [counsellors, selectedSpecialization, sortBy]);
+
   return {
-    counsellors,
+    counsellors: displayedCounsellors,
     loadingCounsellors,
     counsellorsError,
     searchQuery,
     setSearchQuery,
+    specializations,
     selectedSpecialization,
     setSelectedSpecialization,
     sortBy,
