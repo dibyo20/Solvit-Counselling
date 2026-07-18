@@ -30,6 +30,6 @@ app.get("/", (req, res) => {
 
 // routes
 app.use("/api/auth", authRouter);
-app.use("/api/counsellor", counsellorRouter);
+app.use("/api/counsellors", counsellorRouter);
 
 module.exports = app;
