@@ -1,5 +1,5 @@
 const counsellorRouter = require('express').Router();
-const { addCounsellor, getAllCounsellors } = require('../controllers/counsellor.controller.js');
+const { addCounsellor, getAllCounsellors, searchCounsellors } = require('../controllers/counsellor.controller.js');
 const { identifyUser } = require("../middlewares/auth.middleware.js");
 
 /**
@@ -13,5 +13,7 @@ counsellorRouter.post('/add', addCounsellor);
  * Protected: Yes
  */
 counsellorRouter.get('/all', identifyUser, getAllCounsellors);
+
+counsellorRouter.get('/', identifyUser, searchCounsellors);
 
 module.exports = counsellorRouter;

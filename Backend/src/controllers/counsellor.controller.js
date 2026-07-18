@@ -19,7 +19,21 @@ async function addCounsellor(req, res) {
 
 async function getAllCounsellors(req, res) {
     const counsellors = await counsellorModel.find();
-    res.status(200).json({
+    return res.status(200).json({
+        message: "Counsellors fetched successfully",
+        data: counsellors
+    });
+}
+
+async function searchCounsellors(req, res) {
+    const searchKeyword = req.query.search;
+    const counsellors = await counsellorModel.find({
+        $or: {
+            name: { $regex: searchKeyword, $options: 'i' },
+            specialization: { $regex: searchKeyword, $options: 'i' }
+        }
+    });
+    return res.status(200).json({
         message: "Counsellors fetched successfully",
         data: counsellors
     });
@@ -29,5 +43,6 @@ async function getAllCounsellors(req, res) {
 
 module.exports = {
     addCounsellor,
-    getAllCounsellors
+    getAllCounsellors,
+    searchCounsellors,
 }
