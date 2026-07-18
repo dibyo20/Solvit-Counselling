@@ -7,25 +7,6 @@ const isProduction = process.env.NODE_ENV === "production";
 async function registerController(req, res) {
     const { fullname, username, email, password } = req.body;
 
-    if (!fullname || !username || !email || !password) {
-        return res.status(400).json({
-            message: "All fields are required: fullname, username, email, password",
-        });
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        return res.status(400).json({ message: "Invalid email format" });
-    }
-
-    if (password.length < 6) {
-        return res.status(400).json({ message: "Password must be at least 6 characters long" });
-    }
-
-    if (username.length < 3) {
-        return res.status(400).json({ message: "Username must be at least 3 characters long" });
-    }
-
     try {
         const isUserExists = await userModel.findOne({
             $or: [{ username }, { email }],
@@ -82,14 +63,6 @@ async function registerController(req, res) {
  */
 async function loginController(req, res) {
     const { username, email, password } = req.body;
-
-    if (!password) {
-        return res.status(400).json({ message: "Password is required" });
-    }
-
-    if (!username && !email) {
-        return res.status(400).json({ message: "Either username or email is required" });
-    }
 
     try {
         const query = [];

@@ -6,24 +6,6 @@ const counsellorModel = require("../models/counsellor.model");
 async function addCounsellor(req, res) {
     const { name, image, specialization, experience, rating, sessionFee, availability } = req.body;
 
-    if (!name || !specialization || experience === undefined || !sessionFee || !availability) {
-        return res.status(400).json({
-            message: "Required fields: name, specialization, experience, sessionFee, availability",
-        });
-    }
-
-    if (typeof experience !== "number" || experience < 0) {
-        return res.status(400).json({ message: "Experience must be a non-negative number" });
-    }
-
-    if (rating !== undefined && (typeof rating !== "number" || rating < 0 || rating > 5)) {
-        return res.status(400).json({ message: "Rating must be a number between 0 and 5" });
-    }
-
-    if (typeof sessionFee !== "number" || sessionFee < 0) {
-        return res.status(400).json({ message: "Session fee must be a non-negative number" });
-    }
-
     try {
         const newCounsellor = await counsellorModel.create({
             name,
