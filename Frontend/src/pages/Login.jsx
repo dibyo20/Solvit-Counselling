@@ -93,7 +93,7 @@ const Login = () => {
         </form>
 
         <p className="auth-redirect">
-          Don't have an account? <Link to="/register">Register</Link>
+          Don't have an account? <Link to="/">Register</Link>
         </p>
 
         <p className="auth-footer">
