@@ -15,7 +15,7 @@ const Login = () => {
     if (!emailOrUsername || !password) return;
     try {
       await loginUser(emailOrUsername, password);
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       console.log(err);
     }

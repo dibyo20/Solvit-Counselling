@@ -38,7 +38,7 @@ const Register = () => {
 
     try {
       await registerUser(fullname, email, username, password);
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       setLocalError(err.message);
     }
