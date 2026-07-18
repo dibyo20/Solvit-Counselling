@@ -1,4 +1,3 @@
-import React from "react";
 import { X, User, Mail, Calendar, MessageSquare, Check, ArrowRight } from "lucide-react";
 
 const BookingModal = ({ isOpen, counsellor, onClose, bookingController }) => {

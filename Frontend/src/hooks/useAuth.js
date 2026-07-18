@@ -14,7 +14,6 @@ export const useAuth = () => {
     setError("");
     try {
       const response = await register(fullname, username, email, password);
-      console.log(response);
       setUser(response.user);
       return response.user;
     } catch (err) {
