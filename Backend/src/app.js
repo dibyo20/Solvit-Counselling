@@ -39,4 +39,17 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/counsellors", counsellorRouter);
 
+// 404 handler — route not found
+app.use((req, res) => {
+    res.status(404).json({ message: `Route ${req.method} ${req.originalUrl} not found` });
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error("Unhandled Error:", err);
+    res.status(err.status || 500).json({
+        message: err.message || "Internal server error",
+    });
+});
+
 module.exports = app;
