@@ -3,12 +3,21 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "http://127.0.0.1:5173",
-  "http://localhost:5174",
-  "http://127.0.0.1:5174"
+const defaultAllowedOrigins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+    "https://solvit.dibyo.tech",
+    "https://www.solvit.dibyo.tech"
 ];
+
+const envAllowedOrigins = (process.env.ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+
+const allowedOrigins = [...new Set([...defaultAllowedOrigins, ...envAllowedOrigins])];
 
 const authRouter = require("./routes/auth.routes.js");
 const counsellorRouter = require("./routes/counsellor.routes.js");

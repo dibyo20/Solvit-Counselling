@@ -24,9 +24,17 @@ export const register = async (fullname, username, email, password) => {
   }
 };
 
-export const login = async (username, password) => {
+export const login = async (loginCredential, password) => {
   try {
-    const response = await api.post("/login", {username, password});
+    const trimmedCredential = loginCredential?.trim() || "";
+    const payload = {
+      password,
+      ...(trimmedCredential.includes("@")
+        ? { email: trimmedCredential }
+        : { username: trimmedCredential }),
+    };
+
+    const response = await api.post("/login", payload);
     return response.data;
   } catch (error) {
     throw error.response?.data || { message: "An error occurred during login" };
