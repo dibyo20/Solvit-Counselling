@@ -10,11 +10,17 @@ const api = axios.create({
   },
 });
 
-export const getCounsellors = async (searchKeyword = "") => {
+export const getCounsellors = async (search = "", specialization = "", sortBy = "") => {
   try {
     const params = {};
-    if (searchKeyword.trim()) {
-      params.search = searchKeyword.trim();
+    if (search && search.trim()) {
+      params.search = search.trim();
+    }
+    if (specialization && specialization !== "All") {
+      params.specialization = specialization;
+    }
+    if (sortBy && sortBy !== "Recommended") {
+      params.sortBy = sortBy;
     }
     const response = await api.get("/", { params });
     return response.data;

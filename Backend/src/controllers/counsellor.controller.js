@@ -29,19 +29,31 @@ async function addCounsellor(req, res) {
 
 async function getAllCounsellors(req, res) {
     try {
-        const searchKeyword = req.query.search;
-        let counsellors;
+        const { search, specialization, sortBy } = req.query;
+        let query = {};
 
-        if (searchKeyword) {
-            counsellors = await counsellorModel.find({
-                $or: [
-                    { name: { $regex: searchKeyword, $options: "i" } },
-                    { specialization: { $regex: searchKeyword, $options: "i" } },
-                ],
-            });
-        } else {
-            counsellors = await counsellorModel.find();
+        if (search) {
+            query.$or = [
+                { name: { $regex: search, $options: "i" } },
+                { specialization: { $regex: search, $options: "i" } },
+            ];
         }
+
+        if (specialization && specialization !== "All") {
+            query.specialization = { $regex: `^${specialization}$`, $options: "i" };
+        }
+
+        let dbQuery = counsellorModel.find(query);
+
+        if (sortBy) {
+            if (sortBy === "Highest Rating") {
+                dbQuery = dbQuery.sort({ rating: -1 });
+            } else if (sortBy === "Experience") {
+                dbQuery = dbQuery.sort({ experience: -1 });
+            }
+        }
+
+        const counsellors = await dbQuery;
 
         return res.status(200).json({
             message: "Counsellors fetched successfully",

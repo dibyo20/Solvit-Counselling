@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context";
 import { getCounsellors } from "../services/counsellor.service";
 
@@ -19,11 +19,29 @@ export const useCounsellors = () => {
     setSortBy,
   } = context;
 
-  const fetchCounsellors = async (keyword = "") => {
+  const [specializations, setSpecializations] = useState(["All"]);
+
+  // Fetch unique specializations once on mount
+  useEffect(() => {
+    const fetchAllSpecializations = async () => {
+      try {
+        const response = await getCounsellors();
+        if (response && response.data) {
+          const unique = [...new Set(response.data.map((c) => c.specialization))].sort();
+          setSpecializations(["All", ...unique]);
+        }
+      } catch (error) {
+        console.error("Failed to fetch specializations:", error);
+      }
+    };
+    fetchAllSpecializations();
+  }, []);
+
+  const fetchCounsellors = async (search = "", specialization = "", sort = "") => {
     setLoadingCounsellors(true);
     setCounsellorsError("");
     try {
-      const response = await getCounsellors(keyword);
+      const response = await getCounsellors(search, specialization, sort);
       setCounsellors(response.data);
     } catch (error) {
       setCounsellorsError(error.message || "Failed to fetch counsellors");
@@ -33,43 +51,11 @@ export const useCounsellors = () => {
   };
 
   useEffect(() => {
-    fetchCounsellors(searchQuery);
-  }, [searchQuery]);
-
-  // Derive unique specializations from the fetched list
-  const specializations = useMemo(() => {
-    const unique = [...new Set(counsellors.map((c) => c.specialization))].sort();
-    return ["All", ...unique];
-  }, [counsellors]);
-
-  // Apply specialization filter + sort client-side
-  const displayedCounsellors = useMemo(() => {
-    let list = [...counsellors];
-
-    // Filter by specialization
-    if (selectedSpecialization && selectedSpecialization !== "All") {
-      list = list.filter(
-        (c) =>
-          c.specialization.toLowerCase() === selectedSpecialization.toLowerCase()
-      );
-    }
-
-    switch (sortBy) {
-      case "Highest Rating":
-        list.sort((a, b) => b.rating - a.rating);
-        break;
-      case "Experience":
-        list.sort((a, b) => b.experience - a.experience);
-        break;
-      default:
-        break;
-    }
-
-    return list;
-  }, [counsellors, selectedSpecialization, sortBy]);
+    fetchCounsellors(searchQuery, selectedSpecialization, sortBy);
+  }, [searchQuery, selectedSpecialization, sortBy]);
 
   return {
-    counsellors: displayedCounsellors,
+    counsellors,
     loadingCounsellors,
     counsellorsError,
     searchQuery,
