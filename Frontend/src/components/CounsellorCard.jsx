@@ -40,7 +40,7 @@ const CounsellorCard = ({ counsellor, onBookSession }) => {
       <div>
         <div className="card-header">
           <div className="avatar-wrapper">
-            <img src={counsellor.image || "https://cdn-icons-png.flaticon.com/512/149/149071.png"} alt={counsellor.name} />
+            <img src={counsellor.image || "https://img.magnific.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"} alt={counsellor.name} />
             <span className="online-dot"></span>
           </div>
           <div className="rating-box">
