@@ -1,0 +1,702 @@
+[
+  {
+    "id": "c1",
+    "name": "Dr. Aarav Mehta",
+    "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 12,
+    "rating": 4.9,
+    "sessionFee": 1500,
+    "availability": "Mon, Wed, Fri (10:00 AM - 4:00 PM)"
+  },
+  {
+    "id": "c2",
+    "name": "Ananya Sharma",
+    "image": "https://images.unsplash.com/photo-1594824813573-246434de83fb?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 8,
+    "rating": 4.7,
+    "sessionFee": 1200,
+    "availability": "Tue, Thu (2:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c3",
+    "name": "Vikram Malhotra",
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 15,
+    "rating": 4.8,
+    "sessionFee": 2000,
+    "availability": "Mon, Tue, Wed (5:00 PM - 9:00 PM)"
+  },
+  {
+    "id": "c4",
+    "name": "Riya Kapoor",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 6,
+    "rating": 4.5,
+    "sessionFee": 1000,
+    "availability": "Everyday (11:00 AM - 1:00 PM)"
+  },
+  {
+    "id": "c5",
+    "name": "Dr. Rohan Joshi",
+    "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 10,
+    "rating": 4.6,
+    "sessionFee": 1400,
+    "availability": "Thu, Fri, Sat (3:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c6",
+    "name": "Sneha Reddy",
+    "image": "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 5,
+    "rating": 4.4,
+    "sessionFee": 950,
+    "availability": "Mon, Wed (9:00 AM - 12:00 PM)"
+  },
+  {
+    "id": "c7",
+    "name": "Kabir Verma",
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 14,
+    "rating": 4.9,
+    "sessionFee": 1800,
+    "availability": "Sat, Sun (10:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c8",
+    "name": "Meera Nair",
+    "image": "https://images.unsplash.com/photo-1651008011612-e79a404d42fb?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 9,
+    "rating": 4.7,
+    "sessionFee": 1300,
+    "availability": "Tue, Thu, Fri (4:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c9",
+    "name": "Arjun Singhal",
+    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 7,
+    "rating": 4.3,
+    "sessionFee": 1100,
+    "availability": "Mon to Fri (6:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c10",
+    "name": "Pooja Desai",
+    "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 11,
+    "rating": 4.8,
+    "sessionFee": 1600,
+    "availability": "Wed, Sat (1:00 PM - 5:00 PM)"
+  },
+  {
+    "id": "c11",
+    "name": "Dr. Amit Khurana",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 18,
+    "rating": 5.0,
+    "sessionFee": 2500,
+    "availability": "Mon, Tue (10:00 AM - 1:00 PM)"
+  },
+  {
+    "id": "c12",
+    "name": "Nisha Gupta",
+    "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 4,
+    "rating": 4.2,
+    "sessionFee": 800,
+    "availability": "Fri, Sun (5:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c13",
+    "name": "Rahul Saxena",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 13,
+    "rating": 4.7,
+    "sessionFee": 1700,
+    "availability": "Tue, Wed, Thu (3:00 PM - 6:00 PM)"
+  },
+  {
+    "id": "c14",
+    "name": "Divya Choudhary",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 9,
+    "rating": 4.6,
+    "sessionFee": 1350,
+    "availability": "Mon, Fri (11:00 AM - 3:00 PM)"
+  },
+  {
+    "id": "c15",
+    "name": "Siddharth Bose",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 10,
+    "rating": 4.5,
+    "sessionFee": 1400,
+    "availability": "Thu, Sat (6:00 PM - 9:00 PM)"
+  },
+  {
+    "id": "c16",
+    "name": "Kriti Malhotra",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 8,
+    "rating": 4.7,
+    "sessionFee": 1250,
+    "availability": "Mon, Tue, Thu (12:00 PM - 4:00 PM)"
+  },
+  {
+    "id": "c17",
+    "name": "Dr. Vikas Anand",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 16,
+    "rating": 4.9,
+    "sessionFee": 2200,
+    "availability": "Wed, Fri (4:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c18",
+    "name": "Isha Taneja",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 6,
+    "rating": 4.4,
+    "sessionFee": 1100,
+    "availability": "Tue, Sat (10:00 AM - 1:00 PM)"
+  },
+  {
+    "id": "c19",
+    "name": "Manish Mishra",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 12,
+    "rating": 4.8,
+    "sessionFee": 1650,
+    "availability": "Mon, Thu (7:00 PM - 10:00 PM)"
+  },
+  {
+    "id": "c20",
+    "name": "Shalini Sen",
+    "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 7,
+    "rating": 4.6,
+    "sessionFee": 1150,
+    "availability": "Wed, Sun (2:00 PM - 5:00 PM)"
+  },
+  {
+    "id": "c21",
+    "name": "Aditya Roy",
+    "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 5,
+    "rating": 4.3,
+    "sessionFee": 900,
+    "availability": "Tue, Thu (9:00 AM - 1:00 PM)"
+  },
+  {
+    "id": "c22",
+    "name": "Dr. Prerna Gill",
+    "image": "https://images.unsplash.com/photo-1591604021695-0c69b7c05981?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 14,
+    "rating": 4.9,
+    "sessionFee": 1900,
+    "availability": "Mon, Wed, Fri (1:00 PM - 5:00 PM)"
+  },
+  {
+    "id": "c23",
+    "name": "Kunwar Singh",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 11,
+    "rating": 4.5,
+    "sessionFee": 1500,
+    "availability": "Sat, Sun (3:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c24",
+    "name": "Tanvi Marwah",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 10,
+    "rating": 4.8,
+    "sessionFee": 1400,
+    "availability": "Mon, Tue, Thu (5:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c25",
+    "name": "Dr. Deepak Ray",
+    "image": "https://images.unsplash.com/photo-1584467541268-b040f83be3fd?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 20,
+    "rating": 5.0,
+    "sessionFee": 3000,
+    "availability": "Tue, Thu (11:00 AM - 3:00 PM)"
+  },
+  {
+    "id": "c26",
+    "name": "Bhavna Patel",
+    "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 7,
+    "rating": 4.4,
+    "sessionFee": 1100,
+    "availability": "Wed, Fri (10:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c27",
+    "name": "Rishi Thapar",
+    "image": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 8,
+    "rating": 4.6,
+    "sessionFee": 1300,
+    "availability": "Mon, Fri (4:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c28",
+    "name": "Pallavi Shah",
+    "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 12,
+    "rating": 4.7,
+    "sessionFee": 1600,
+    "availability": "Tue, Wed, Sat (6:00 PM - 9:00 PM)"
+  },
+  {
+    "id": "c29",
+    "name": "Gaurav Dhingra",
+    "image": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 9,
+    "rating": 4.5,
+    "sessionFee": 1250,
+    "availability": "Mon, Thu (11:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c30",
+    "name": "Kiran Bedi",
+    "image": "https://images.unsplash.com/photo-1548142813-c348350df52b?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 15,
+    "rating": 4.9,
+    "sessionFee": 2100,
+    "availability": "Everyday (4:00 PM - 6:00 PM)"
+  },
+  {
+    "id": "c31",
+    "name": "Dr. Vivek Oberoi",
+    "image": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 13,
+    "rating": 4.8,
+    "sessionFee": 1800,
+    "availability": "Wed, Thu, Fri (5:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c32",
+    "name": "Shruti Hassan",
+    "image": "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 6,
+    "rating": 4.3,
+    "sessionFee": 1000,
+    "availability": "Mon, Tue (9:00 AM - 1:00 PM)"
+  },
+  {
+    "id": "c33",
+    "name": "Nikhil Kamath",
+    "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 4,
+    "rating": 4.1,
+    "sessionFee": 850,
+    "availability": "Sat, Sun (11:00 AM - 4:00 PM)"
+  },
+  {
+    "id": "c34",
+    "name": "Radhika Apte",
+    "image": "https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 10,
+    "rating": 4.7,
+    "sessionFee": 1500,
+    "availability": "Mon, Wed (3:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c35",
+    "name": "Abhishek Bachchan",
+    "image": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 16,
+    "rating": 4.9,
+    "sessionFee": 2300,
+    "availability": "Tue, Thu (4:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c36",
+    "name": "Janhavi Kapoor",
+    "image": "https://images.unsplash.com/photo-1594744803329-e58b31de215f?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 5,
+    "rating": 4.4,
+    "sessionFee": 950,
+    "availability": "Fri, Sat (10:00 AM - 1:00 PM)"
+  },
+  {
+    "id": "c37",
+    "name": "Dr. Sameer Reddy",
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 14,
+    "rating": 4.8,
+    "sessionFee": 1900,
+    "availability": "Mon, Wed, Fri (2:00 PM - 6:00 PM)"
+  },
+  {
+    "id": "c38",
+    "name": "Tara Sutaria",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 8,
+    "rating": 4.6,
+    "sessionFee": 1300,
+    "availability": "Tue, Thu (11:00 AM - 3:00 PM)"
+  },
+  {
+    "id": "c39",
+    "name": "Varun Dhawan",
+    "image": "https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 9,
+    "rating": 4.5,
+    "sessionFee": 1400,
+    "availability": "Mon, Sat (6:00 PM - 9:00 PM)"
+  },
+  {
+    "id": "c40",
+    "name": "Kriti Sanon",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 7,
+    "rating": 4.6,
+    "sessionFee": 1200,
+    "availability": "Wed, Thu (3:00 PM - 6:00 PM)"
+  },
+  {
+    "id": "c41",
+    "name": "Dr. Ishaan Khattar",
+    "image": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 11,
+    "rating": 4.7,
+    "sessionFee": 1600,
+    "availability": "Tue, Fri (10:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c42",
+    "name": "Alia Bhatt",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 12,
+    "rating": 4.9,
+    "sessionFee": 1800,
+    "availability": "Mon, Wed, Fri (4:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c43",
+    "name": "Ranbir Kapoor",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 15,
+    "rating": 4.8,
+    "sessionFee": 2200,
+    "availability": "Sat, Sun (12:00 PM - 4:00 PM)"
+  },
+  {
+    "id": "c44",
+    "name": "Kiara Advani",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 6,
+    "rating": 4.5,
+    "sessionFee": 1100,
+    "availability": "Thu, Fri (5:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c45",
+    "name": "Sid Malhotra",
+    "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 8,
+    "rating": 4.4,
+    "sessionFee": 1300,
+    "availability": "Mon, Tue (2:00 PM - 6:00 PM)"
+  },
+  {
+    "id": "c46",
+    "name": "Dr. Bhumi Pednekar",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 13,
+    "rating": 4.8,
+    "sessionFee": 1750,
+    "availability": "Wed, Sat (11:00 AM - 3:00 PM)"
+  },
+  {
+    "id": "c47",
+    "name": "Ayushmann Khurrana",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 10,
+    "rating": 4.7,
+    "sessionFee": 1500,
+    "availability": "Tue, Thu (6:00 PM - 9:00 PM)"
+  },
+  {
+    "id": "c48",
+    "name": "Yami Gautam",
+    "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 9,
+    "rating": 4.6,
+    "sessionFee": 1350,
+    "availability": "Mon, Fri (9:00 AM - 12:00 PM)"
+  },
+  {
+    "id": "c49",
+    "name": "Vicky Kaushal",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 7,
+    "rating": 4.3,
+    "sessionFee": 1200,
+    "availability": "Thu, Sat (4:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c50",
+    "name": "Katrina Kaif",
+    "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 14,
+    "rating": 4.9,
+    "sessionFee": 2000,
+    "availability": "Mon, Tue, Wed (10:00 AM - 1:00 PM)"
+  },
+  {
+    "id": "c51",
+    "name": "Dr. Rajkumar Rao",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 11,
+    "rating": 4.7,
+    "sessionFee": 1600,
+    "availability": "Fri, Sun (3:00 PM - 6:00 PM)"
+  },
+  {
+    "id": "c52",
+    "name": "Patralekha Paul",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 8,
+    "rating": 4.5,
+    "sessionFee": 1250,
+    "availability": "Tue, Thu (1:00 PM - 5:00 PM)"
+  },
+  {
+    "id": "c53",
+    "name": "Pankaj Tripathi",
+    "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 18,
+    "rating": 5.0,
+    "sessionFee": 2500,
+    "availability": "Mon to Thu (5:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c54",
+    "name": "Manoj Bajpayee",
+    "image": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 19,
+    "rating": 4.9,
+    "sessionFee": 2400,
+    "availability": "Wed, Fri (11:00 AM - 3:00 PM)"
+  },
+  {
+    "id": "c55",
+    "name": "Nawazuddin Siddiqui",
+    "image": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 17,
+    "rating": 4.8,
+    "sessionFee": 2200,
+    "availability": "Sat, Sun (4:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c56",
+    "name": "Radhika Madan",
+    "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 5,
+    "rating": 4.3,
+    "sessionFee": 900,
+    "availability": "Mon, Wed (12:00 PM - 3:00 PM)"
+  },
+  {
+    "id": "c57",
+    "name": "Dr. Saif Ali Khan",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 16,
+    "rating": 4.7,
+    "sessionFee": 2100,
+    "availability": "Tue, Thu (10:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c58",
+    "name": "Kareena Kapoor",
+    "image": "https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 15,
+    "rating": 4.8,
+    "sessionFee": 2300,
+    "availability": "Wed, Fri (3:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c59",
+    "name": "Karisma Kapoor",
+    "image": "https://images.unsplash.com/photo-1594744803329-e58b31de215f?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 14,
+    "rating": 4.6,
+    "sessionFee": 1900,
+    "availability": "Mon, Thu (6:00 PM - 9:00 PM)"
+  },
+  {
+    "id": "c60",
+    "name": "Dr. Madhuri Dixit",
+    "image": "https://images.unsplash.com/photo-1548142813-c348350df52b?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 22,
+    "rating": 5.0,
+    "sessionFee": 3500,
+    "availability": "Tue, Wed (11:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c61",
+    "name": "Anil Kapoor",
+    "image": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 25,
+    "rating": 4.9,
+    "sessionFee": 3200,
+    "availability": "Mon, Fri (4:00 PM - 7:00 PM)"
+  },
+  {
+    "id": "c62",
+    "name": "Sonam Kapoor",
+    "image": "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 9,
+    "rating": 4.4,
+    "sessionFee": 1400,
+    "availability": "Thu, Sat (1:00 PM - 5:00 PM)"
+  },
+  {
+    "id": "c63",
+    "name": "Harshvardhan Kapoor",
+    "image": "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 4,
+    "rating": 4.1,
+    "sessionFee": 800,
+    "availability": "Tue, Thu (9:00 AM - 12:00 PM)"
+  },
+  {
+    "id": "c64",
+    "name": "Dr. Tabu Hashmi",
+    "image": "https://images.unsplash.com/photo-1594824813573-246434de83fb?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 20,
+    "rating": 5.0,
+    "sessionFee": 3000,
+    "availability": "Wed, Fri (5:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c65",
+    "name": "Farhan Akhtar",
+    "image": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 13,
+    "rating": 4.8,
+    "sessionFee": 2000,
+    "availability": "Mon, Tue (2:00 PM - 5:00 PM)"
+  },
+  {
+    "id": "c66",
+    "name": "Zoya Akhtar",
+    "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=200&h=200&fit=crop",
+    "specialization": "Career",
+    "experience": 12,
+    "rating": 4.7,
+    "sessionFee": 1850,
+    "availability": "Thu, Sat (10:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c67",
+    "name": "Javed Akhtar",
+    "image": "https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=200&h=200&fit=crop",
+    "specialization": "Relationship",
+    "experience": 30,
+    "rating": 5.0,
+    "sessionFee": 4000,
+    "availability": "Wed (3:00 PM - 6:00 PM)"
+  },
+  {
+    "id": "c68",
+    "name": "Shabana Azmi",
+    "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 28,
+    "rating": 4.9,
+    "sessionFee": 3800,
+    "availability": "Tue, Fri (11:00 AM - 2:00 PM)"
+  },
+  {
+    "id": "c69",
+    "name": "Dr. Naseeruddin Shah",
+    "image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200&h=200&fit=crop",
+    "specialization": "Anxiety",
+    "experience": 26,
+    "rating": 5.0,
+    "sessionFee": 3500,
+    "availability": "Mon, Thu (4:00 PM - 8:00 PM)"
+  },
+  {
+    "id": "c70",
+    "name": "Ratna Pathak",
+    "image": "https://images.unsplash.com/photo-1651008011612-e79a404d42fb?q=80&w=200&h=200&fit=crop",
+    "specialization": "Stress",
+    "experience": 22,
+    "rating": 4.9,
+    "sessionFee": 3000,
+    "availability": "Wed, Sat (2:00 PM - 6:00 PM)"
+  }
+]
