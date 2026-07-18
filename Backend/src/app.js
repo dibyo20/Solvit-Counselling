@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const authRouter = require("./routes/auth.routes.js");
+const counsellorRouter = require("./routes/counsellor.routes.js");
 
 // middlewares
 app.use(express.json());
@@ -29,5 +30,6 @@ app.get("/", (req, res) => {
 
 // routes
 app.use("/api/auth", authRouter);
+app.use("/api/counsellor", counsellorRouter);
 
 module.exports = app;
