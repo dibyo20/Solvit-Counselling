@@ -21,7 +21,7 @@ export const useCounsellors = () => {
 
   const [specializations, setSpecializations] = useState(["All"]);
 
-  // Fetch unique specializations once on mount
+
   useEffect(() => {
     const fetchAllSpecializations = async () => {
       try {
